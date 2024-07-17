@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+    xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+    
+    <!--persistence-unit name="TestPersistence" transaction-type="JTA"-->
+    <!--persistence-unit name="TestPersistence" transaction-type="RESOURCE_LOCAL"-->
+    <persistence-unit name="TestPersistence" >
+       <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+       <class>com.mavenJPAHibernate.HibernateDemoJPA.JPAHibernateDeemo.Entity.JPAEntity</class>
+            <properties>
+            <!-- JDBC Database connection settings -->
+           <property name="jakarta.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/SeveltExampleDB"/>
+            <property name="jakarta.persistence.jdbc.user" value="root"/>
+            <property name="jakarta.persistence.jdbc.password" value="roopa"/>
+            <!--nOT NECESSARY TO CREATE THIS FOR UPDATE/FIND/GET BUT TO CREATE DB THIS IS NEEDED-->
+                        <!-- Hibernate properties -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="create"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            </properties>
+            
+    </persistence-unit>
+    
+</persistence>
